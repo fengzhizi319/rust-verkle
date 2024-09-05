@@ -902,7 +902,6 @@ fn multi_proof_large_data_time_optimize1() {
     use ark_std::UniformRand;
     use std::time::Instant;
 
-    let mut rng = test_rng();
     let n = 256;
     let crs = CRS::new(n, b"random seed");
 
@@ -936,7 +935,7 @@ fn multi_proof_large_data_time_optimize1() {
 
 
     let start = Instant::now();
-    let multiproof = MultiPoint::open_opt(
+    let _multiproof = MultiPoint::open_opt(
         crs.clone(),
         &precomp,
         &mut prover_transcript,
